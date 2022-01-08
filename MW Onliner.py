@@ -1,4 +1,15 @@
-import websocket, os, threading, json, asyncio
+import os, threading, json
+
+def install_module(module_name):
+    os.system("pip install " + module_name)
+try:
+    import websocket
+except:
+    install_module("websocket")
+try:
+    import asyncio
+except:
+    install_module("asyncio")
 
 os.system("title MW Onliner")
 os.system("cls")
